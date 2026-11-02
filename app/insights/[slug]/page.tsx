@@ -25,16 +25,27 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 const h2 = { margin: "20px 0 0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 28, lineHeight: 1.15, fontWeight: 600, letterSpacing: "-0.02em", color: "#111111" } as const;
 
+// Small inline formatting for article text: **bold**, *italic* and [link](url).
+function inline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g).map((part, k) => {
+    if (part.startsWith("**") && part.endsWith("**")) return <strong key={k} style={{ color: "#111111" }}>{part.slice(2, -2)}</strong>;
+    if (part.startsWith("*") && part.endsWith("*") && part.length > 2) return <em key={k}>{part.slice(1, -1)}</em>;
+    const m = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(part);
+    if (m) return <a key={k} href={m[2]} target="_blank" rel="noopener noreferrer" style={{ color: "#111111", textDecoration: "underline", textUnderlineOffset: 3 }}>{m[1]}</a>;
+    return part;
+  });
+}
+
 function render(b: Block, i: number) {
   switch (b.t) {
     case "h":
       return <h2 key={i} style={h2}>{b.text}</h2>;
     case "p":
-      return <p key={i} style={{ margin: 0 }}>{b.text}</p>;
+      return <p key={i} style={{ margin: 0 }}>{inline(b.text)}</p>;
     case "ul":
       return (
         <ul key={i} style={{ margin: 0, paddingLeft: 22, display: "flex", flexDirection: "column", gap: 10 }}>
-          {b.items.map((t) => <li key={t}>{t}</li>)}
+          {b.items.map((t) => <li key={t}>{inline(t)}</li>)}
         </ul>
       );
     case "callout":
