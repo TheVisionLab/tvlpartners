@@ -16,3 +16,6 @@ input,select,textarea,button{font:inherit}
 @media(max-width:1000px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:minmax(0,1fr);row-gap:0}.step{padding-bottom:40px}.dbr{display:none}}
 @media(max-width:760px){.grid2{grid-template-columns:minmax(0,1fr)}.logos4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.grid3{grid-template-columns:minmax(0,1fr)}}
+
+header a,footer a,nav a{display:inline-flex;align-items:center;min-height:44px}
+footer nav{gap:0 28px!important}

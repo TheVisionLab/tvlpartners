@@ -15,7 +15,7 @@ export default function Header() {
           const active = path === n.href || path.startsWith(n.href + "/");
           return (
             <Link key={n.href} href={n.href} aria-current={active ? "page" : undefined}
-              style={active ? { borderBottom: "2px solid #C23B14", paddingBottom: 2 } : undefined}>
+              style={active ? { boxShadow: "inset 0 -2px 0 #C23B14", paddingBottom: 0 } : undefined}>
               {n.label}
             </Link>
           );

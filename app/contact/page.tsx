@@ -16,9 +16,9 @@ export default function Page() {
 </div>
 
 <div style={{ display: "flex", flexDirection: "column", borderTop: "2px solid #111111" }}>
-<div style={{ padding: "20px 0", borderBottom: "1px solid #D4D4D0", display: "flex", flexDirection: "column", gap: 4 }}><div style={{ fontSize: 12, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>EMAIL</div><div style={{ fontSize: 17 }}><a href={`mailto:${CONTACT_EMAIL}`} style={{ textDecoration: "underline" }}>{CONTACT_EMAIL}</a></div></div>
-<div style={{ padding: "20px 0", borderBottom: "1px solid #D4D4D0", display: "flex", flexDirection: "column", gap: 4 }}><div style={{ fontSize: 12, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>BOOK A CALL</div><div style={{ fontSize: 17 }}><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>Book a 30-minute call</a></div></div>
-<div style={{ padding: "20px 0", borderBottom: "1px solid #D4D4D0", display: "flex", flexDirection: "column", gap: 4 }}><div style={{ fontSize: 12, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>LOCATION</div><div style={{ fontSize: 17 }}>New York area. Working with teams worldwide.</div></div>
+<div style={{ padding: "20px 0", borderBottom: "1px solid #D4D4D0", display: "flex", flexDirection: "column", gap: 4 }}><div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>EMAIL</div><div style={{ fontSize: 17 }}><a href={`mailto:${CONTACT_EMAIL}`} style={{ textDecoration: "underline" }}>{CONTACT_EMAIL}</a></div></div>
+<div style={{ padding: "20px 0", borderBottom: "1px solid #D4D4D0", display: "flex", flexDirection: "column", gap: 4 }}><div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>BOOK A CALL</div><div style={{ fontSize: 17 }}><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>Book a 30-minute call</a></div></div>
+<div style={{ padding: "20px 0", borderBottom: "1px solid #D4D4D0", display: "flex", flexDirection: "column", gap: 4 }}><div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>LOCATION</div><div style={{ fontSize: 17 }}>New York area. Working with teams worldwide.</div></div>
 </div>
 </div>
 
