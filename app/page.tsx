@@ -32,7 +32,11 @@ export default function Page() {
 
 <section style={{ padding: "36px 64px", background: "#F1F1EF", borderTop: "1px solid #111111", borderBottom: "1px solid #111111", display: "flex", flexWrap: "wrap", gap: "20px 48px", alignItems: "center" }}>
 <div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>LEADERSHIP EXPERIENCE ACROSS</div>
-<div style={{ display: "flex", flexWrap: "wrap", gap: "12px 40px", fontFamily: "'Space Grotesk',sans-serif", fontSize: 22, fontWeight: "500", color: "#3A3A3A" }}><span>Nokia</span><span>Mitsubishi Electric</span><span>Meta</span><span>Samsung Electronics America</span></div>
+<div style={{ display: "flex", flexWrap: "wrap", gap: "16px 40px", alignItems: "center" }}>
+{[["nokia.png","Nokia"],["mitsubishi-electric.png","Mitsubishi Electric"],["meta.jpg","Meta"],["samsung.png","Samsung"]].map(([f,alt]) => (
+<div key={f} style={{ background: "#fff", border: "1px solid #D4D4D0", padding: "8px 16px", display: "flex", alignItems: "center" }}><img src={`/logos/${f}`} alt={alt} style={{ height: 52, width: "auto", maxWidth: "100%", objectFit: "contain", mixBlendMode: "multiply" }} /></div>
+))}
+</div>
 </section>
 
 <section style={{ padding: "96px 64px", display: "flex", flexDirection: "column", gap: 44 }}>
