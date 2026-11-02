@@ -32,19 +32,19 @@ export default function Page() {
 
 <section style={{ padding: "36px 64px", background: "#F1F1EF", borderTop: "1px solid #111111", borderBottom: "1px solid #111111", display: "flex", flexWrap: "wrap", gap: "20px 48px", alignItems: "center" }}>
 <div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>LEADERSHIP EXPERIENCE ACROSS</div>
-<div style={{ display: "flex", flexWrap: "wrap", gap: "16px 40px", alignItems: "center" }}>
+<div className="logos4" style={{ flex: "1 1 560px", minWidth: 0 }}>
 {[["nokia.png","Nokia"],["mitsubishi-electric.png","Mitsubishi Electric"],["meta.jpg","Meta"],["samsung.png","Samsung"]].map(([f,alt]) => (
-<div key={f} style={{ background: "#fff", border: "1px solid #D4D4D0", padding: "8px 16px", display: "flex", alignItems: "center" }}><img src={`/logos/${f}`} alt={alt} style={{ height: 52, width: "auto", maxWidth: "100%", objectFit: "contain", mixBlendMode: "multiply" }} /></div>
+<div key={f} style={{ background: "#fff", border: "1px solid #D4D4D0", padding: "8px 16px", height: 84, display: "flex", alignItems: "center", justifyContent: "center" }}><img src={`/logos/${f}`} alt={alt} style={{ height: 52, width: "auto", maxWidth: "100%", objectFit: "contain", mixBlendMode: "multiply" }} /></div>
 ))}
 </div>
 </section>
 
 <section style={{ padding: "96px 64px", display: "flex", flexDirection: "column", gap: 44 }}>
-<div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: "40em" }}>
+<div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: "52em" }}>
 <div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>WHAT WE DO</div>
-<h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 48, lineHeight: "1.06", fontWeight: "600", letterSpacing: "-0.025em" }}>Six ways we help AI companies sell to the enterprise.</h2>
+<h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 48, lineHeight: "1.06", fontWeight: "600", letterSpacing: "-0.025em" }}>Six ways we help AI companies<br className="dbr" /> sell to the enterprise.</h2>
 </div>
-<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", gap: "0", borderTop: "1px solid #111111", borderLeft: "1px solid #111111" }}>
+<div className="grid3" style={{ borderTop: "1px solid #111111", borderLeft: "1px solid #111111" }}>
 <div style={{ borderRight: "1px solid #111111", borderBottom: "1px solid #111111", padding: 28, display: "flex", flexDirection: "column", gap: 10 }}><div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, color: "#A8330F", fontWeight: "600" }}>01</div><h3 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, lineHeight: "1.15", fontWeight: "600" }}>Sales pipeline architecture</h3><p style={{ margin: "0", fontSize: 15, lineHeight: "1.55", color: "#3A3A3A" }}>Pipeline stages built around how enterprise buyers evaluate AI: procurement, compliance, data access and security.</p></div>
 <div style={{ borderRight: "1px solid #111111", borderBottom: "1px solid #111111", padding: 28, display: "flex", flexDirection: "column", gap: 10 }}><div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, color: "#A8330F", fontWeight: "600" }}>02</div><h3 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, lineHeight: "1.15", fontWeight: "600" }}>Proof of concept to production</h3><p style={{ margin: "0", fontSize: 15, lineHeight: "1.55", color: "#3A3A3A" }}>Clear success criteria, mutual action plans and technical milestones that turn pilots into contracts.</p></div>
 <div style={{ borderRight: "1px solid #111111", borderBottom: "1px solid #111111", padding: 28, display: "flex", flexDirection: "column", gap: 10 }}><div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 15, color: "#A8330F", fontWeight: "600" }}>03</div><h3 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, lineHeight: "1.15", fontWeight: "600" }}>Pipeline hygiene and forecasting</h3><p style={{ margin: "0", fontSize: 15, lineHeight: "1.55", color: "#3A3A3A" }}>Repeatable systems for clean data, visible stalled deals and forecasts you can defend.</p></div>
@@ -84,7 +84,7 @@ export default function Page() {
 </section>
 
 <section style={{ background: "#C23B14", padding: "72px 64px", display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "space-between", alignItems: "center" }}>
-<h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 44, lineHeight: "1.06", fontWeight: "600", letterSpacing: "-0.025em", color: "#fff", maxWidth: "18em" }}>Talk to us about your enterprise pipeline.</h2>
+<h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 44, lineHeight: "1.06", fontWeight: "600", letterSpacing: "-0.025em", color: "#fff", maxWidth: "18em" }}>Talk to us about<br className="dbr" /> your enterprise pipeline.</h2>
 <a href="https://calendly.com/trevormadigan" target="_blank" rel="noopener noreferrer" style={{ background: "#111111", color: "#fff", fontSize: 16, fontWeight: "600", padding: "16px 30px" }}>Book a call</a>
 </section></>
   );

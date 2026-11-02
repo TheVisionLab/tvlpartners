@@ -6,12 +6,14 @@ export const metadata: Metadata = { title: "Contact", description: "Tell us wher
 
 export default function Page() {
   return (
-<><section style={{ display: "flex", flexWrap: "wrap", gap: 64, padding: "88px 64px", alignItems: "flex-start" }}>
+<><section style={{ display: "flex", flexWrap: "wrap", gap: 64, padding: "88px 64px", alignItems: "stretch" }}>
 
-<div style={{ flex: "1 1 440px", minWidth: "0", display: "flex", flexDirection: "column", gap: 28 }}>
+<div style={{ flex: "1 1 440px", minWidth: "0", display: "flex", flexDirection: "column", gap: 28, justifyContent: "space-between" }}>
+<div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
 <div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>CONTACT</div>
 <h1 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 64, lineHeight: "1.04", fontWeight: "600", letterSpacing: "-0.03em" }}>Tell us where your deals stall.</h1>
 <p style={{ margin: "0", fontSize: 19, lineHeight: "1.55", color: "#3A3A3A" }}>A short note is enough. We&apos;ll tell you honestly whether we can help.</p>
+</div>
 
 <div style={{ display: "flex", flexDirection: "column", borderTop: "2px solid #111111" }}>
 <div style={{ padding: "20px 0", borderBottom: "1px solid #D4D4D0", display: "flex", flexDirection: "column", gap: 4 }}><div style={{ fontSize: 12, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>EMAIL</div><div style={{ fontSize: 17 }}><a href={`mailto:${CONTACT_EMAIL}`} style={{ textDecoration: "underline" }}>{CONTACT_EMAIL}</a></div></div>

@@ -11,9 +11,9 @@ export default function Page() {
 </section>
 
 <section style={{ padding: "0 64px 88px" }}>
-<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", gap: "0", borderTop: "2px solid #111111" }}>
+<div className="steps">
 
-<div style={{ padding: "32px 32px 32px 0", display: "flex", flexDirection: "column", gap: 18, borderRight: "1px solid #D4D4D0" }}>
+<div className="step">
 <div style={{ display: "flex", alignItems: "center", gap: 14 }}><div style={{ width: 44, height: 44, background: "#C23B14", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, fontWeight: "600" }}>1</div><div style={{ height: 2, flexGrow: "1", background: "#C23B14" }} /></div>
 <h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 32, fontWeight: "600", letterSpacing: "-0.02em" }}>Diagnose</h2>
 <p style={{ margin: "0", fontSize: 16, lineHeight: "1.6", color: "#3A3A3A" }}>We review your pipeline, live deals and buyer conversations to find where deals stall and why.</p>
@@ -23,7 +23,7 @@ export default function Page() {
 <p style={{ margin: "0", fontSize: 15, lineHeight: "1.5" }}>A short written diagnosis: where deals stall, the causes, and the order to fix them.</p>
 </div>
 
-<div style={{ padding: 32, display: "flex", flexDirection: "column", gap: 18, borderRight: "1px solid #D4D4D0" }}>
+<div className="step">
 <div style={{ display: "flex", alignItems: "center", gap: 14 }}><div style={{ width: 44, height: 44, background: "#C23B14", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, fontWeight: "600" }}>2</div><div style={{ height: 2, flexGrow: "1", background: "#C23B14" }} /></div>
 <h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 32, fontWeight: "600", letterSpacing: "-0.02em" }}>Design</h2>
 <p style={{ margin: "0", fontSize: 16, lineHeight: "1.6", color: "#3A3A3A" }}>We design the stages, plans and playbooks your team will use, built around how your enterprise buyers actually buy.</p>
@@ -33,7 +33,7 @@ export default function Page() {
 <p style={{ margin: "0", fontSize: 15, lineHeight: "1.5" }}>The working system, written down and agreed with your leadership.</p>
 </div>
 
-<div style={{ padding: "32px 0 32px 32px", display: "flex", flexDirection: "column", gap: 18 }}>
+<div className="step">
 <div style={{ display: "flex", alignItems: "center", gap: 14 }}><div style={{ width: 44, height: 44, background: "#C23B14", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk',sans-serif", fontSize: 20, fontWeight: "600" }}>3</div><div style={{ height: 2, flexGrow: "1", background: "#C23B14" }} /></div>
 <h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 32, fontWeight: "600", letterSpacing: "-0.02em" }}>Embed</h2>
 <p style={{ margin: "0", fontSize: 16, lineHeight: "1.6", color: "#3A3A3A" }}>We work alongside your team until the system runs without us.</p>

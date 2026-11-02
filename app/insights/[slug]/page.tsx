@@ -77,7 +77,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
-      <section style={{ padding: "72px 64px 40px", maxWidth: 960, display: "flex", flexDirection: "column", gap: 20 }}>
+      <section style={{ padding: "72px 64px 40px", maxWidth: 840, display: "flex", flexDirection: "column", gap: 20 }}>
         <Link href="/insights" style={{ fontSize: 14, fontWeight: 600, color: "#A8330F" }}>← All insights</Link>
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", color: "#A8330F" }}>{a.tag} · {a.date}</div>
         <h1 style={{ margin: 0, fontFamily: "'Space Grotesk',sans-serif", fontSize: 56, lineHeight: 1.05, fontWeight: 600, letterSpacing: "-0.03em" }}>{a.title}</h1>

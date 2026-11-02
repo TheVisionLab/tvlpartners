@@ -17,7 +17,7 @@ export default function Page() {
 </section>
 
 <section style={{ padding: "0 64px 88px" }}>
-<Cards items={ARTICLES.slice(1)} />
+<Cards items={ARTICLES.slice(1)} twoUp />
 </section>
 
 <section style={{ background: "#C23B14", padding: "72px 64px", display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "space-between", alignItems: "center" }}>

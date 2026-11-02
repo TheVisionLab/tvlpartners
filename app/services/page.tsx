@@ -5,9 +5,9 @@ export const metadata: Metadata = { title: "Services", description: "Pipeline ar
 
 export default function Page() {
   return (
-<><section style={{ padding: "88px 64px 64px", display: "flex", flexDirection: "column", gap: 24, maxWidth: 960 }}>
+<><section style={{ padding: "88px 64px 64px", display: "flex", flexDirection: "column", gap: 24, maxWidth: 1200 }}>
 <div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#A8330F" }}>SERVICES</div>
-<h1 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 64, lineHeight: "1.04", fontWeight: "600", letterSpacing: "-0.03em" }}>Six ways we help AI companies sell to the enterprise.</h1>
+<h1 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 64, lineHeight: "1.04", fontWeight: "600", letterSpacing: "-0.03em" }}>Six ways we help AI companies<br className="dbr" /> sell to the enterprise.</h1>
 <p style={{ margin: "0", fontSize: 19, lineHeight: "1.55", color: "#3A3A3A" }}>Most AI deals stall between pilot and production. Each service targets one reason they do. Use one, or combine them.</p>
 </section>
 

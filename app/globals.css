@@ -6,3 +6,13 @@ img{max-width:100%}
 input,select,textarea,button{font:inherit}
 :focus-visible{outline:3px solid #C23B14;outline-offset:2px}
 @media(max-width:640px){header,section,footer{padding-left:20px!important;padding-right:20px!important}h1{font-size:40px!important}h2{font-size:30px!important}nav{gap:14px 18px!important}}
+
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.logos4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:64px}
+.step{display:grid;grid-row:span 7;grid-template-rows:subgrid;row-gap:18px;border-top:2px solid #111111;padding-top:32px;align-content:start}
+.dbr{display:inline}
+@media(max-width:1000px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:minmax(0,1fr);row-gap:0}.step{padding-bottom:40px}.dbr{display:none}}
+@media(max-width:760px){.grid2{grid-template-columns:minmax(0,1fr)}.logos4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.grid3{grid-template-columns:minmax(0,1fr)}}

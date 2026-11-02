@@ -19,9 +19,9 @@ export function Featured() {
   );
 }
 
-export function Cards({ items, min = 420, bordered = true, headingSize = 28 }: { items: typeof ARTICLES; min?: number; bordered?: boolean; headingSize?: number }) {
+export function Cards({ items, min = 420, bordered = true, headingSize = 28, twoUp = false }: { items: typeof ARTICLES; min?: number; bordered?: boolean; headingSize?: number; twoUp?: boolean }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: `repeat(auto-fit,minmax(min(100%,${min}px),1fr))`, gap: 24 }}>
+    <div className={twoUp ? "grid2" : undefined} style={twoUp ? { gap: 24 } : { display: "grid", gridTemplateColumns: `repeat(auto-fit,minmax(min(100%,${min}px),1fr))`, gap: 24 }}>
       {items.map((a) => (
         <Link key={a.slug} href={`/insights/${a.slug}`}
           style={{ background: "#F1F1EF", border: bordered ? "1px solid #111111" : undefined, padding: bordered ? 32 : 28, display: "flex", flexDirection: "column", gap: 14 }}>
