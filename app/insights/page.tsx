@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Featured, Cards } from "@/components/ArticleCards";
 import { ARTICLES } from "@/lib/articles";
 
-export const metadata: Metadata = { title: "Insights", description: "Notes on selling AI to large organizations: pipeline, proof of concept and enterprise deals.", alternates: { canonical: "insights" } };
+export const metadata: Metadata = { title: "Insights", description: "Notes on selling AI to large organizations: pipeline, proof of concept and enterprise deals.", alternates: { canonical: "/insights" } };
 
 export default function Page() {
   return (

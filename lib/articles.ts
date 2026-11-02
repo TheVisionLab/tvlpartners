@@ -1,42 +1,240 @@
-import { LINKEDIN_ARTICLES_URL } from "./site";
+export type Block =
+  | { t: "h"; text: string }
+  | { t: "p"; text: string }
+  | { t: "ul"; items: string[] }
+  | { t: "table"; head: string[]; rows: string[][] }
+  | { t: "callout"; text: string };
 
-export type Article = { tag: string; date: string; title: string; summary: string; url: string };
+export type Article = {
+  slug: string;
+  tag: string;
+  date: string; // display date, editorial
+  iso: string; // editorial date for metadata
+  title: string;
+  summary: string;
+  read: string;
+  body: Block[];
+};
 
-// Newest first. Dates are editorial; url points to the author's LinkedIn articles until each article link is added.
+// Newest first. Dates are editorial.
 export const ARTICLES: Article[] = [
   {
+    slug: "the-handshake-is-the-new-cold-email",
     tag: "OUTREACH",
     date: "1 NOVEMBER 2026",
+    iso: "2026-11-01",
     title: "The handshake is the new cold email.",
     summary: "AI has taken over the inbox. Why human connection is becoming the way through, and what to do about it.",
-    url: LINKEDIN_ARTICLES_URL,
+    read: "4 min read",
+    body: [
+      { t: "p", text: "Every outreach channel has now been automated. Email, LinkedIn messages, calls and texts all fill up with sequences that were written, personalized and sent by software. Buyers have noticed. The inbox is no longer a place where a stranger can earn attention; it is a wall." },
+      { t: "h", text: "Why automation stopped working" },
+      { t: "p", text: "When everyone can send a thousand tailored messages a day, tailoring stops meaning anything. Senior buyers delete first and read later, if at all. Younger buyers add to the problem: they grew up on messaging apps and group chats, and an unsolicited call or email already feels like noise to them." },
+      { t: "p", text: "There is a second force at work. People are more isolated than they used to be. The U.S. Surgeon General has called loneliness a public health epidemic. A buyer who spends the day behind screens is more receptive than ever to a real conversation with a real person, and less receptive to a sixth email in a sequence." },
+      { t: "h", text: "Go where the bots cannot follow" },
+      { t: "p", text: "The answer is not a cleverer subject line. It is showing up in person, in places where your buyer already spends time. Six ways we have seen this work:" },
+      { t: "ul", items: [
+        "Volunteer for the cause your customer cares about. You meet the people who run the company in a setting where nobody is selling.",
+        "Work from a co-working space in your customer's postcode. Familiar faces turn into introductions.",
+        "Take a class your buyer would take. Shared effort builds trust faster than any pitch.",
+        "Host a small dinner with no pitch. Six to eight guests, good food, real conversation. Follow-ups happen on their own.",
+        "Join the Slack and Discord communities your buyers use, then take the best conversations offline.",
+        "Choose micro-events over mega-conferences. In a small room you cannot hide behind a booth, and people actually talk.",
+      ] },
+      { t: "h", text: "What this means for a sales team" },
+      { t: "p", text: "None of this replaces pipeline discipline. It feeds it. A meeting that begins with a handshake starts warmer, moves faster and reaches decision makers that outreach tools never will. The work is to choose a few rooms, show up repeatedly, and follow up properly afterwards." },
+      { t: "callout", text: "When everyone automates, the advantage goes to the people who turn up." },
+    ],
   },
   {
+    slug: "why-pocs-fail",
     tag: "PROOF OF CONCEPT",
     date: "1 OCTOBER 2026",
+    iso: "2026-10-01",
     title: "Why so many POCs fail, and how to make yours a success.",
     summary: "POCs drag on, lose focus and fail to prove business value. How to set clear expectations, measure the right metrics and manage timelines.",
-    url: LINKEDIN_ARTICLES_URL,
+    read: "5 min read",
+    body: [
+      { t: "p", text: "A proof of concept should be the bridge between a promising product and a signed contract. For AI and SaaS companies it is often the first real step into an enterprise account. Yet too many POCs stall, and when they do, both sides lose time, budget and credibility." },
+      { t: "p", text: "A POC is not a free trial. It is a sales motion with a start, an end and a decision at the finish. Here is why they go wrong, and how to run one that converts." },
+      { t: "h", text: "Why POCs fail" },
+      { t: "ul", items: [
+        "No agreed definition of success. \"Show us the AI works\" means something different to everyone in the room.",
+        "Scope creep. A six-week test grows into months of extra features and \"what about\" scenarios.",
+        "No executive sponsor. Without a senior owner, the POC stays a technical experiment instead of a business decision.",
+        "Mismatched timelines. Buyers underestimate procurement; vendors underestimate integration work.",
+        "The wrong measures. Teams prove the technology works but never show business impact.",
+      ] },
+      { t: "h", text: "Set expectations on both sides" },
+      { t: "p", text: "Tell the client plainly that this is not production. The aim is to validate one or two outcomes that matter. Tell your own leadership that the POC is not a test of the whole roadmap; it exists to speed up a decision. And tell your sales team that the POC is not the goal. The rollout is, and the deal is the measure of success." },
+      { t: "h", text: "Measure what drives a buying decision" },
+      { t: "ul", items: [
+        "Adoption: the share of intended users who actually use it during the test.",
+        "Efficiency: time, effort or cost saved compared with today's workflow.",
+        "Accuracy and performance: improvement in precision, recall or error rate.",
+        "A proxy for ROI: early signs of savings or revenue enabled.",
+        "Time to value: how quickly a measurable benefit appears.",
+      ] },
+      { t: "h", text: "Keep the timeline tight" },
+      { t: "p", text: "Four to eight weeks is long enough to show value and short enough to hold attention. A workable shape: week one for setup and alignment, weeks two and three for data integration and first outputs, weeks four to six for measurable usage, and the last week or two for an executive readout and a decision. Once a POC runs past 90 days, the chance that it converts drops sharply." },
+      { t: "h", text: "What a successful POC has in place" },
+      { t: "ul", items: [
+        "An executive sponsor secured before kickoff.",
+        "Written exit criteria: what must be true for both sides to sign.",
+        "A dedicated client team, with someone on their side who owns the result.",
+        "A business case built in parallel, so ROI and rollout justification are ready when the product proves itself.",
+        "A follow-on plan, with the rollout contract prepared before the POC ends.",
+      ] },
+      { t: "callout", text: "A POC is not only proof that the technology works. It is proof of the business case for change." },
+    ],
   },
   {
+    slug: "building-a-sales-pipeline-for-an-ai-startup",
     tag: "PIPELINE",
     date: "1 SEPTEMBER 2026",
+    iso: "2026-09-01",
     title: "Building a sales pipeline for an AI startup: process, tools and pitfalls.",
     summary: "Define your ICP, apply MEDDPICC in complex deals, pick the tools and track ROI. Plus the traps to avoid, like the POC graveyard and over-automation.",
-    url: LINKEDIN_ARTICLES_URL,
+    read: "6 min read",
+    body: [
+      { t: "p", text: "For an AI startup, the real test is the first enterprise deal. A pipeline is more than a lead list. It is a repeatable process that carries an opportunity from first contact to signed contract and shows value at every step. This is the framework we use." },
+      { t: "h", text: "1. Start with a narrow ICP" },
+      { t: "p", text: "Before choosing a tool or writing a message, decide who you are selling to." },
+      { t: "ul", items: [
+        "Verticals: which industries have real AI budgets, such as financial services, healthcare or retail.",
+        "Personas: who owns the problem your product solves, whether that is the CIO, the COO or a business-line leader.",
+        "Problem fit: which pain is large enough that a buyer will move budget and accept the risk of something new.",
+      ] },
+      { t: "p", text: "Keep the profile tight at first. Win one vertical, then widen." },
+      { t: "h", text: "2. Map the buying journey" },
+      { t: "p", text: "Enterprise AI deals involve legal, compliance, IT, finance and the end users. A qualification method such as MEDDPICC keeps that complexity visible: metrics, economic buyer, decision process, decision criteria, paper process, pain, champion and competition. It keeps a team focused on opportunities that are really moving, not just on the number of deals in the pipeline." },
+      { t: "h", text: "3. Build a precise outreach engine" },
+      { t: "ul", items: [
+        "Prospecting with tools such as LinkedIn Sales Navigator, Apollo or Cognism to find high-fit accounts.",
+        "Personalization help from tools such as Lavender or Regie.ai, always with a person editing.",
+        "Sequencing in Outreach or Salesloft, with tight filters to avoid spray and pray.",
+      ] },
+      { t: "p", text: "Early benchmarks worth tracking: a reply rate above 15 percent and a meeting rate above 5 percent." },
+      { t: "h", text: "4. Plan on proofs of concept" },
+      { t: "p", text: "Enterprises rarely buy AI from a cold email. Expect a POC, and run it well: six to twelve weeks, with success criteria agreed up front and tied to a business result such as \"20 percent faster claims processing\", not \"a good demo\"." },
+      { t: "h", text: "5. Give yourself visibility" },
+      { t: "table", head: ["Need", "Examples"], rows: [
+        ["CRM", "HubSpot for startups, Salesforce for scale"],
+        ["Data and enrichment", "ZoomInfo, Clearbit"],
+        ["Deal execution", "PandaDoc, DocuSign"],
+        ["Forecasting and analytics", "Clari, Gong"],
+      ] },
+      { t: "p", text: "Measure pipeline coverage (three to four times quota), POC conversion (aim above 40 percent), sales cycle length by segment, and annual recurring revenue per deal." },
+      { t: "h", text: "6. Know the pitfalls" },
+      { t: "ul", items: [
+        "Long cycles. Six to twelve months or more from first contact to revenue is normal.",
+        "Compliance and risk. Data privacy and bias questions mean security reviews take time; plan for them.",
+        "The POC graveyard. Many AI startups stall in endless pilots. Tie every POC to contracted next steps.",
+        "Over-automation. Outreach that feels robotic loses to outreach that feels human.",
+      ] },
+      { t: "callout", text: "The best pipelines do not just collect leads. They turn AI innovation into enterprise revenue." },
+    ],
   },
   {
+    slug: "why-meddpicc-fails",
     tag: "QUALIFICATION",
     date: "1 AUGUST 2026",
+    iso: "2026-08-01",
     title: "The hard truth: why MEDDPICC often fails in AI and SaaS sales.",
     summary: "Applied well, it exposes risk early and ties deals to real outcomes. Applied badly, it becomes CRM theater.",
-    url: LINKEDIN_ARTICLES_URL,
+    read: "6 min read",
+    body: [
+      { t: "p", text: "MEDDPICC is a qualification framework built to bring discipline and honesty to long, complex B2B deals. It stands for:" },
+      { t: "ul", items: [
+        "Metrics: the quantified outcomes the customer expects.",
+        "Economic buyer: the person with final budget authority.",
+        "Decision criteria: how the buyer will compare options.",
+        "Decision process: the steps required to approve a purchase.",
+        "Paper process: legal, security, procurement and contracting steps.",
+        "Identify pain: the business problem that creates urgency.",
+        "Champion: an internal advocate with influence and a reason to act.",
+        "Competition: every alternative, including doing nothing.",
+      ] },
+      { t: "p", text: "It grew out of the MEDDIC method developed at PTC in the 1990s, widely credited to Dick Dunkel, to improve forecast accuracy and cut late-stage losses in large deals. Champions, compliance and procurement were added over time as enterprise buying became more formal." },
+      { t: "h", text: "Why it still gives a team an edge" },
+      { t: "p", text: "Enterprise buyers do not buy AI because it is impressive. They buy it to cut cost, grow revenue, or reduce risk and speed up work. MEDDPICC pushes a seller to quantify that early, which matters when AI budgets are under scrutiny and finance leaders want a number they can defend." },
+      { t: "p", text: "It also maps the buying committee. IT, security, legal, procurement, business leaders and sometimes model-risk teams all weigh in. Knowing who decides, how and in what order is often the difference between a six-month deal and an eighteen-month stall. It exposes competition early, including internal build teams and the option to do nothing. And by focusing on real pain and a real champion, it moves a seller from vendor to trusted adviser." },
+      { t: "h", text: "Where it breaks down in AI and SaaS" },
+      { t: "p", text: "Metrics are harder to fix. The value of AI can be probabilistic, outcomes change over time and the customer may not yet know what success looks like. Teams that force numbers too early build assumptions that fall apart in the pilot or in procurement. Treat metrics as hypotheses that firm up as proof arrives." },
+      { t: "p", text: "Champions are more cautious. AI brings security, regulatory and reputational risk, so a champion may back the idea without fully sponsoring it. Build several champions across the business, technical and risk teams." },
+      { t: "p", text: "Decision processes do not run in a line. The path is rarely demo, proposal, contract. It looks more like pilot, pause, review, executive reset, budget reapproval. Check the process again at every stage, not once a quarter." },
+      { t: "p", text: "It turns into a form to fill in. The most common failure is a CRM with every field complete and no evidence behind any of them. That gives false confidence and weak forecasts. Inspect proof instead: who validated the metric, who confirmed the process, and who actually owns the pain." },
+      { t: "h", text: "Making it work" },
+      { t: "ul", items: [
+        "Use it as a conversation framework, not a reporting chore.",
+        "Ask for evidence from the customer, not optimism from the seller.",
+        "Expect it to change; AI deals evolve by design.",
+        "Coach it as deal intelligence, not as compliance.",
+      ] },
+      { t: "callout", text: "MEDDPICC is not outdated. Undisciplined use of it is. Done well, it prevents wasted cycles and false optimism, and helps a team win the deals that actually close." },
+    ],
   },
   {
+    slug: "points-based-sales-funnel",
     tag: "FUNNEL",
     date: "1 JULY 2026",
+    iso: "2026-07-01",
     title: "The power of a points-based sales funnel: turning MQLs into revenue.",
     summary: "MQL to SQL scoring gives revenue teams clarity, alignment and predictable growth.",
-    url: LINKEDIN_ARTICLES_URL,
+    read: "6 min read",
+    body: [
+      { t: "p", text: "What separates a good sales organization from a great one is often how clearly it can see its pipeline. A points-based funnel gives that clarity. By defining marketing qualified leads (MQLs) and sales qualified leads (SQLs) and scoring both, it turns a list of names into a revenue engine you can forecast." },
+      { t: "h", text: "Why it works" },
+      { t: "p", text: "Instead of guessing who is interested, you measure it. Points are given for who a prospect is and for what they do." },
+      { t: "ul", items: [
+        "Marketing and sales agree. Marketing knows what an MQL is; sales knows when a lead becomes an SQL. The finger-pointing stops.",
+        "Effort goes to the right prospects, not just the loudest.",
+        "Forecasting improves, because conversion rates between stages can be measured.",
+        "Conversion improves, because well-scored leads are approached at the right moment.",
+        "It scales at little extra cost once it is built.",
+      ] },
+      { t: "h", text: "MQL and SQL, in points" },
+      { t: "p", text: "An MQL fits your ideal customer profile and has shown early interest: site visits, downloads, webinar attendance, email engagement and a matching title or company size. For example, a VP at a target account downloads a whitepaper and attends a webinar, reaches 75 points, and becomes an MQL." },
+      { t: "p", text: "An SQL shows clear buying intent: a demo request, visits to the pricing page, several stakeholders involved, budget or timing signals, or a reply to direct outreach. The same VP asks for a demo and invites colleagues, reaches 120 points, and becomes an SQL." },
+      { t: "h", text: "Building the model" },
+      { t: "p", text: "Start with your ideal customer profile: industry, company size, region, budget potential and decision-maker roles. That sets the baseline for fit. Then add a score for behavior." },
+      { t: "table", head: ["Fit (who they are)", "Points"], rows: [
+        ["Target industry", "+20"],
+        ["Enterprise size", "+25"],
+        ["Decision maker", "+30"],
+        ["Outside your ICP", "-20"],
+      ] },
+      { t: "table", head: ["Engagement (what they do)", "Points"], rows: [
+        ["Website visit", "+5"],
+        ["Whitepaper download", "+10"],
+        ["Webinar attendance", "+20"],
+        ["Pricing page visit", "+25"],
+        ["Demo request", "+40"],
+      ] },
+      { t: "p", text: "Typical thresholds are 70 to 90 points for an MQL and 110 to 140 for an SQL. A sales accepted lead (SAL) is one that sales has reviewed and agreed to work." },
+      { t: "h", text: "A stack for a larger company" },
+      { t: "p", text: "A scaleup or enterprise might combine Salesforce or HubSpot with a data warehouse such as Snowflake; marketing automation such as Marketo, HubSpot or Pardot; intent and enrichment from ZoomInfo, 6sense, Clearbit or Demandbase; AI scoring and analytics from MadKudu, Clari, Gong or Common Room; outreach through Outreach, Salesloft, Apollo or Sales Navigator; and dashboards in Tableau, Looker or Power BI. The result is a connected, predictive view of the pipeline in close to real time." },
+      { t: "h", text: "A lean version for a startup" },
+      { t: "p", text: "You do not need a quarter-million-dollar stack. A free or low-cost CRM, simple email marketing, a Google Sheet for the scoring model, Sales Navigator and Zapier are enough. Capture leads with forms, give points automatically through Zapier, sync to the CRM, and alert sales when a lead crosses the SQL line. Monthly cost is often between 500 and 1,500 dollars." },
+      { t: "h", text: "Across the funnel" },
+      { t: "ul", items: [
+        "Top: awareness through thought leadership, events, paid channels and search content. The aim is ICP traffic and early MQLs.",
+        "Middle: case studies, ROI tools, workshops and nurture sequences. The aim is to move MQLs to SQLs.",
+        "Bottom: demos, proof of value, executive alignment and a commercial proposal. The aim is a closed deal.",
+      ] },
+      { t: "h", text: "Mistakes to avoid" },
+      { t: "ul", items: [
+        "Over-engineering the model. Start simple and refine.",
+        "Skipping sales alignment. If sales does not trust the MQLs, the model fails.",
+        "Neglecting data quality. Bad data gives bad scores.",
+        "No feedback loop. Review the scores every month and adjust.",
+      ] },
+      { t: "p", text: "AI tools can now predict deal likelihood, identify buying committees, score intent in real time and suggest next steps. The foundation is unchanged: clear definitions of MQL and SQL, and a score that means something." },
+      { t: "callout", text: "Score what matters. Prioritize what converts. Build a pipeline you can trust." },
+    ],
   },
 ];
+
+export function getArticle(slug: string) {
+  return ARTICLES.find((a) => a.slug === slug);
+}
