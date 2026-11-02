@@ -13,7 +13,7 @@ export default function Page() {
 </div>
 </section>
 
-<section style={{ background: "#111111", color: "#fff", padding: "88px 64px", display: "flex", flexWrap: "wrap", gap: "48px 64px" }}>
+<section style={{ background: "#111111", color: "#fff", padding: "88px 64px", display: "flex", flexWrap: "wrap", gap: "48px 64px", alignItems: "center" }}>
 <div style={{ flex: "1 1 360px", minWidth: "0", display: "flex", flexDirection: "column", gap: 14 }}>
 <div style={{ fontSize: 13, fontWeight: "600", letterSpacing: "0.14em", color: "#FF8A6B" }}>EXPERIENCE</div>
 <h2 style={{ margin: "0", fontFamily: "'Space Grotesk',sans-serif", fontSize: 40, lineHeight: "1.08", fontWeight: "600", letterSpacing: "-0.025em" }}>Our team has led enterprise sales at four global companies.</h2>
